@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des Ventes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="script.js"></script> 
+</head>
+<body>
+    <div class="date-filter">
+        <input type="date" id="operationDate" />
+        <div class="filter-buttons">
+            <input type="date" id="dateDebut" />
+            <input type="date" id="dateFin" />
+            <button onclick="filtrerDonnees()">Filtrer</button>
+            <button onclick="reinitialiserFiltres()">Réinitialiser</button>
+            <button onclick="ouvrirModalProduit()">Gérer les produits</button> 
+            <div class="mode-selector">
+                <label for="mode-offline">Hors ligne:</label>
+                <input type="radio" id="mode-offline" name="mode" value="offline" checked>
+                <label for="mode-online">En ligne:</label>
+                <input type="radio" id="mode-online" name="mode" value="online">
+            </div>
+        </div>
+    </div>
 
+    <section id="approvisionnement">
+        <h2>Approvisionnement</h2>
+        <form id="approvForm" onsubmit="enregistrerApprovisionnement(event)">
+            <div class="form-group">
+                <select id="approvProduit" required onchange="remplirFormulaireApprovisionnement(this.value)"></select>
+                <input type="number" id="approvQuantite" placeholder="Quantité" required />
+                <input type="number" id="approvPrixAchat" placeholder="Prix d'achat brut" required />
+                <input type="number" id="approvTransport" placeholder="Transport" required />
+                <input type="number" id="approvPrixVente" placeholder="Prix de vente" required />
+            </div>
+            <button type="submit">Enregistrer l'approvisionnement</button>
+        </form>
+        <table id="approvTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix d'achat brut</th>
+                    <th>Transport</th>
+                    <th>Prix d'achat total</th>
+                    <th>Prix de vente</th>
+                    <th>Bénéfice potentiel</th>
+                    <th>Actions</th> 
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="exporterTableau('approvTable', 'pdf')">Exporter en PDF</button>
+        <button onclick="exporterTableau('approvTable', 'excel')">Exporter en Excel</button>
+        <button onclick="imprimerTableau('approvTable')">Imprimer</button>
+    </section>
+
+    <section id="ventes">
+        <h2>Ventes</h2>
+        <form id="venteForm" onsubmit="enregistrerVente(event)">
+            <div class="form-group">
+                <select id="venteProduit" required></select>
+                <input type="number" id="venteQuantite" placeholder="Quantité" required />
+                <input type="number" id="ventePrix" placeholder="Prix de vente" required />
+            </div>
+            <button type="submit">Enregistrer la vente</button>
+        </form>
+        <table id="venteTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix de vente</th>
+                    <th>Total</th>
+                    <th>Actions</th> 
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="exporterTableau('venteTable', 'pdf')">Exporter en PDF</button>
+        <button onclick="exporterTableau('venteTable', 'excel')">Exporter en Excel</button>
+        <button onclick="imprimerTableau('venteTable')">Imprimer</button>
+    </section>
+
+    <section id="inventaire">
+        <h2>Inventaire</h2>
+        <table id="inventaireTable">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Stock</th>
+                    <th>Valeur du stock</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="exporterTableau('inventaireTable', 'pdf')">Exporter en PDF</button>
+        <button onclick="exporterTableau('inventaireTable', 'excel')">Exporter en Excel</button>
+        <button onclick="imprimerTableau('inventaireTable')">Imprimer</button>
+    </section>
+
+    <!-- Modal pour la gestion des produits -->
+    <div id="produitModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModalProduit()">×</span>
+            <h2>Gestion des produits</h2>
+            <form id="produitForm" onsubmit="ajouterProduit(event)">
+                <input type="text" id="nouveauProduit" placeholder="Nom du produit" required />
+                <input type="number" id="prixAchatDefaut" placeholder="Prix d'achat par défaut" />
+                <input type="number" id="prixVenteDefaut" placeholder="Prix de vente par défaut" />
+                <button type="submit">Ajouter produit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal pour la modification des approvisionnements/ventes -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModalEdit()">×</span>
+            <h2>Modifier l'opération</h2>
+            <form id="editForm" onsubmit="modifierOperation(event)">
+                <input type="hidden" id="editId"> 
+                <input type="date" id="editDate" />
+                <select id="editProduit" required></select>
+                <input type="number" id="editQuantite" placeholder="Quantité" required />
+                <input type="number" id="editPrixAchat" placeholder="Prix d'achat brut" required /> 
+                <input type="number" id="editTransport" placeholder="Transport" required /> 
+                <input type="number" id="editPrixVente" placeholder="Prix de vente" required /> 
+                <button type="submit">Enregistrer les modifications</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
