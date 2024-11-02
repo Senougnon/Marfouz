@@ -1,0 +1,222 @@
+/* Style général */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Filtres et sélecteur de mode */
+.date-filter {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between; /* Aligner les boutons à gauche et à droite */
+}
+
+.mode-selector { /* Style pour le sélecteur de mode */
+  display: flex;
+  align-items: center;
+}
+
+.mode-selector label {
+  margin-right: 10px;
+}
+
+/* Sections */
+section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Formulaires */
+form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+input,
+select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Boutons */
+button {
+  padding: 8px 16px;
+  background-color: #4CAF50; /* Vert */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transition pour l'effet hover */
+}
+
+button:hover {
+  background-color: #45a049; /* Vert foncé */
+}
+
+/* Tableaux */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  table-layout: auto; /* Pour un ajustement automatique des colonnes */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word; /* Pour gérer les longs mots */
+}
+
+th {
+  background-color: #f2f2f2; /* Gris clair */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Gris très clair */
+}
+
+/* Styles pour le modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Fond noir semi-transparent */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Styles pour l'impression */
+@media print {
+  body {
+    background-color: white; /* Supprimer le fond gris */
+  }
+
+  /* Masquer les éléments non imprimables */
+  button,
+  .date-filter,
+  .modal,
+  .no-print {
+    /* Masquer les éléments avec la classe "no-print" */
+    display: none !important;
+  }
+
+  /* Ajuster les marges */
+  @page {
+    size: auto; /* Ajuster la taille de la page automatiquement */
+    margin: 10mm; /* Marges de 10mm sur chaque côté */
+  }
+
+  /* Ajuster la taille de la police du tableau */
+  table {
+    font-size: 12px; /* Ajuster la taille de la police */
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Important pour que les colonnes conservent leur largeur */
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px; /* Réduire le padding pour gagner de la place */
+    text-align: left;
+    word-wrap: break-word; /* Permet aux mots longs de se diviser sur plusieurs lignes */
+    overflow-wrap: break-word;
+  }
+
+  /* Styles pour l'en-tête */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  /* Styles pour les lignes paires */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+
+  th {
+    background-color: #f2f2f2; /* Couleur de fond de l'en-tête */
+  }
+
+  /* Styles pour les boutons Modifier et Supprimer */
+  .edit-btn,
+  .delete-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .edit-btn {
+    background-color: #007bff; /* Bleu */
+    color: white;
+  }
+
+  .delete-btn {
+    background-color: #dc3545; /* Rouge */
+    color: white;
+  }
+}
