@@ -1,222 +1,339 @@
-/* Style général */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 body {
-  padding: 20px;
-  background-color: #f5f5f5;
+    padding: 20px;
+    background-color: #f5f5f5;
 }
 
-/* Filtres et sélecteur de mode */
 .date-filter {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .filter-buttons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between; /* Aligner les boutons à gauche et à droite */
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.mode-selector { /* Style pour le sélecteur de mode */
-  display: flex;
-  align-items: center;
-}
-
-.mode-selector label {
-  margin-right: 10px;
-}
-
-/* Sections */
 section {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 h2 {
-  margin-bottom: 15px;
-  color: #333;
+    margin-bottom: 15px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Formulaires */
 form {
-  display: grid;
-  gap: 10px;
-  margin-bottom: 20px;
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .form-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
 }
 
-input,
-select {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-/* Boutons */
-button {
-  padding: 8px 16px;
-  background-color: #4CAF50; /* Vert */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Transition pour l'effet hover */
-}
-
-button:hover {
-  background-color: #45a049; /* Vert foncé */
-}
-
-/* Tableaux */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  table-layout: auto; /* Pour un ajustement automatique des colonnes */
-}
-
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-  word-wrap: break-word; /* Pour gérer les longs mots */
-}
-
-th {
-  background-color: #f2f2f2; /* Gris clair */
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9; /* Gris très clair */
-}
-
-/* Styles pour le modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); /* Fond noir semi-transparent */
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-}
-
-/* Styles pour l'impression */
-@media print {
-  body {
-    background-color: white; /* Supprimer le fond gris */
-  }
-
-  /* Masquer les éléments non imprimables */
-  button,
-  .date-filter,
-  .modal,
-  .no-print {
-    /* Masquer les éléments avec la classe "no-print" */
-    display: none !important;
-  }
-
-  /* Ajuster les marges */
-  @page {
-    size: auto; /* Ajuster la taille de la page automatiquement */
-    margin: 10mm; /* Marges de 10mm sur chaque côté */
-  }
-
-  /* Ajuster la taille de la police du tableau */
-  table {
-    font-size: 12px; /* Ajuster la taille de la police */
+input, select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* Important pour que les colonnes conservent leur largeur */
-  }
+}
 
-  th,
-  td {
-    border: 1px solid black;
-    padding: 8px; /* Réduire le padding pour gagner de la place */
-    text-align: left;
-    word-wrap: break-word; /* Permet aux mots longs de se diviser sur plusieurs lignes */
-    overflow-wrap: break-word;
-  }
-
-  /* Styles pour l'en-tête */
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .header h1 {
-    font-size: 18px;
-  }
-
-  /* Styles pour les lignes paires */
-  tr:nth-child(even) {
-    background-color: #f9f9f9; 
-  }
-
-  th {
-    background-color: #f2f2f2; /* Couleur de fond de l'en-tête */
-  }
-
-  /* Styles pour les boutons Modifier et Supprimer */
-  .edit-btn,
-  .delete-btn {
-    padding: 5px 10px;
-    margin-right: 5px;
+button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-
-  .edit-btn {
-    background-color: #007bff; /* Bleu */
-    color: white;
-  }
-
-  .delete-btn {
-    background-color: #dc3545; /* Rouge */
-    color: white;
-  }
+    transition: background-color 0.3s;
 }
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.total-row {
+    background-color: #e9ecef !important;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #4CAF50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.product-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.edit-mode input {
+    margin: 2px;
+    padding: 4px;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Classes utilitaires */
+.text-right {
+    text-align: right;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+/* Media Queries pour l'impression */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    section {
+        box-shadow: none;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .print-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* Media Queries pour la responsivité */
+@media screen and (max-width: 768px) {
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 2% auto;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .export-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+/* Styles pour les états des boutons */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Styles pour les inputs en focus */
+input:focus, select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Styles pour les états de validation des formulaires */
+input:invalid {
+    border-color: #dc3545;
+}
+
+input:valid {
+    border-color: #28a745;
+}
+
+/* Styles pour améliorer l'accessibilité */
+button, input, select {
+    font-size: 1rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Styles pour les messages d'erreur */
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+/* Styles pour les tooltips */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: #333;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+

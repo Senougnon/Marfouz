@@ -1,1 +1,837 @@
-const _0x5e5669=_0x4706;(function(_0x18f33d,_0xe444ef){const _0x378092=_0x4706,_0x47ba9b=_0x18f33d();while(!![]){try{const _0x4ab509=parseInt(_0x378092(0x156))/0x1*(parseInt(_0x378092(0x166))/0x2)+parseInt(_0x378092(0x191))/0x3*(parseInt(_0x378092(0x1aa))/0x4)+-parseInt(_0x378092(0x159))/0x5*(parseInt(_0x378092(0x1ac))/0x6)+-parseInt(_0x378092(0x194))/0x7+-parseInt(_0x378092(0x175))/0x8*(-parseInt(_0x378092(0x1cb))/0x9)+-parseInt(_0x378092(0x15e))/0xa*(-parseInt(_0x378092(0x1bf))/0xb)+-parseInt(_0x378092(0x154))/0xc*(parseInt(_0x378092(0x18d))/0xd);if(_0x4ab509===_0xe444ef)break;else _0x47ba9b['push'](_0x47ba9b['shift']());}catch(_0x1532bf){_0x47ba9b['push'](_0x47ba9b['shift']());}}}(_0x3245,0x3f908));function _0x3245(){const _0x9ae133=['width','operationDate','removeChild','push','save','valeur','contentWindow','iframe','181368TIlOOq','close','6VlGXHK','venteQuantite','initializeApp','5ORRYNh','date','produits/','editId','getElementById','10oApcEF','marfouz-6b775','getItem','approvProduit','\x20\x0a\x20\x20\x20\x20</body>\x0a\x20\x20\x20\x20</html>\x0a\x20\x20','approvisionnements/','quantite','\x27)\x22>Supprimer</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','30494WttWnG','transport','preventDefault','outerHTML','prixAchatDefaut','cloneNode','approvQuantite','.xlsx','onload','appendChild','inventaire','editModal','setItem','marfouz-6b775.firebaseapp.com','vente','1538192ISBycB','height','entries','produitModal','produit','prixAchat','approvTable','focus','#inventaireTable\x20tbody','jsPDF','body','pageSize','database','Tableau\x20des\x20Ventes','Êtes-vous\x20sûr\x20de\x20vouloir\x20supprimer\x20cette\x20opération\u00a0?','ventes','reset','addImage','produits','value','style','setFontSize','modeEnLigne','index','182AkoCaq','checked','valueAsDate','image/jpeg','9xvMSWq','input[name=\x22mode\x22]','querySelectorAll','2558892LCYnuQ','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22delete-btn\x22\x20onclick=\x22supprimerOperation(\x27vente\x27,\x20\x27','approvPrixVente','ventes/','approvPrixAchat','forEach','toFixed','marfouz-6b775.appspot.com','key','querySelector','approvisionnements','filter','target','stringify','prixAchatTotal','approvisionnement','then','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','prixVenteDefaut','editTransport','ref','#venteTable\x20tbody','462520lJEFcY','editQuantite','1034142NuUtNx','text','option','.edit-btn','G-JSLD71X9Z0','.pdf','excel','addEventListener','display','writeFile','type','editDate','dataset','dateFin','</title>\x0a\x20\x20\x20\x20\x20\x20<style>\x0a\x20\x20\x20\x20\x20\x20\x20\x20/*\x20Styles\x20CSS\x20pour\x20l\x27impression\x20*/\x0a\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20table\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2010pt;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-collapse:\x20collapse;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20table-layout:\x20fixed;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20th,\x20td\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20black;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20word-wrap:\x20break-word;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20/*\x20Styles\x20pour\x20l\x27en-tête\x20*/\x0a\x20\x20\x20\x20\x20\x20\x20\x20.header\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.header\x20h1\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2018px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20</style>\x0a\x20\x20\x20\x20</head>\x0a\x20\x20\x20\x20<body>\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h1>','editPrixAchat','document','prixVente','print','4171453jyuSbB','dateDebut','</td>\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20','click','Tableau\x20des\x20Inventaires','write','block','utils','none','button','toDataURL','nouveauProduit','9OmFKvK','https://marfouz-6b775-default-rtdb.firebaseio.com','Tableau\x20des\x20Approvisionnements','editPrixVente','val','donnees','mode-offline','remove','#approvTable\x20tbody','createElement','approvTransport','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22delete-btn\x22\x20onclick=\x22supprimerOperation(\x27approvisionnement\x27,\x20\x27','inventaireTable','splice','venteTable','textContent','\x0a\x20\x20\x20\x20<html>\x0a\x20\x20\x20\x20<head>\x0a\x20\x20\x20\x20\x20\x20<title>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','total','1:877095609290:web:2e6bc0456f1580e1942533','innerHTML','ventePrix','</h1>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20'];_0x3245=function(){return _0x9ae133;};return _0x3245();}const firebaseConfig={'apiKey':'AIzaSyBuqC1mLmLgEUxYcXgkcr6o0p0qFAG3eRY','authDomain':_0x5e5669(0x173),'databaseURL':_0x5e5669(0x1cc),'projectId':_0x5e5669(0x15f),'storageBucket':_0x5e5669(0x19b),'messagingSenderId':'877095609290','appId':_0x5e5669(0x1de),'measurementId':_0x5e5669(0x1b0)},app=firebase[_0x5e5669(0x158)](firebaseConfig),database=firebase[_0x5e5669(0x181)]();let donnees={'approvisionnements':[],'ventes':[],'inventaire':{},'produits':{}},modeEnLigne=![];window[_0x5e5669(0x16e)]=function(){const _0x24bf4c=_0x5e5669;chargerDonnees(),mettreAJourSelectionProduits(),document['getElementById'](_0x24bf4c(0x1e3))['valueAsDate']=new Date(),modeEnLigne=![],document[_0x24bf4c(0x15d)](_0x24bf4c(0x1d1))[_0x24bf4c(0x18e)]=!![];};function sauvegarderDonnees(){const _0x4721d4=_0x5e5669;localStorage[_0x4721d4(0x172)](_0x4721d4(0x1d0),JSON[_0x4721d4(0x1a1)](donnees));}function chargerDonnees(){const _0x1aa0f0=_0x5e5669,_0x4d1fe5=localStorage[_0x1aa0f0(0x160)]('donnees');_0x4d1fe5&&(donnees=JSON['parse'](_0x4d1fe5),rafraichirTableaux());}function enregistrerApprovisionnement(_0x1a4a56){const _0xd7bc3f=_0x5e5669;_0x1a4a56[_0xd7bc3f(0x168)]();const _0x345669=document[_0xd7bc3f(0x15d)](_0xd7bc3f(0x1e3))[_0xd7bc3f(0x188)],_0x4034d5=document[_0xd7bc3f(0x15d)]('approvProduit')[_0xd7bc3f(0x188)],_0x5a20eb=parseFloat(document[_0xd7bc3f(0x15d)](_0xd7bc3f(0x16c))[_0xd7bc3f(0x188)]),_0x309355=parseFloat(document[_0xd7bc3f(0x15d)](_0xd7bc3f(0x198))[_0xd7bc3f(0x188)]),_0x2a2495=parseFloat(document['getElementById'](_0xd7bc3f(0x1d5))['value']),_0x192548=parseFloat(document[_0xd7bc3f(0x15d)](_0xd7bc3f(0x196))[_0xd7bc3f(0x188)]),_0x11c026=_0x309355+_0x2a2495,_0x1bab1d=(_0x192548-_0x11c026)*_0x5a20eb,_0x469342={'date':_0x345669,'produit':_0x4034d5,'quantite':_0x5a20eb,'prixAchat':_0x309355,'transport':_0x2a2495,'prixAchatTotal':_0x11c026,'prixVente':_0x192548,'benefice':_0x1bab1d};donnees['approvisionnements'][_0xd7bc3f(0x1e5)](_0x469342),mettreAJourInventaire(),sauvegarderDonnees(),rafraichirTableaux(),_0x1a4a56['target'][_0xd7bc3f(0x185)](),modeEnLigne&&database[_0xd7bc3f(0x1a8)](_0xd7bc3f(0x19e))['push'](_0x469342);}function enregistrerVente(_0x4772da){const _0x2361bc=_0x5e5669;_0x4772da[_0x2361bc(0x168)]();const _0x404fb1=document[_0x2361bc(0x15d)](_0x2361bc(0x1e3))[_0x2361bc(0x188)],_0x4321e1=document[_0x2361bc(0x15d)]('venteProduit')[_0x2361bc(0x188)],_0x199e43=parseFloat(document[_0x2361bc(0x15d)](_0x2361bc(0x157))[_0x2361bc(0x188)]),_0x4a0141=parseFloat(document[_0x2361bc(0x15d)](_0x2361bc(0x1e0))[_0x2361bc(0x188)]),_0x540b53=_0x199e43*_0x4a0141,_0x2cbb95={'date':_0x404fb1,'produit':_0x4321e1,'quantite':_0x199e43,'prixVente':_0x4a0141,'total':_0x540b53};donnees['ventes'][_0x2361bc(0x1e5)](_0x2cbb95),mettreAJourInventaire(),sauvegarderDonnees(),rafraichirTableaux(),_0x4772da[_0x2361bc(0x1a0)]['reset'](),modeEnLigne&&database[_0x2361bc(0x1a8)]('ventes')[_0x2361bc(0x1e5)](_0x2cbb95);}function mettreAJourInventaire(){const _0x51eac8=_0x5e5669;donnees[_0x51eac8(0x170)]={},donnees[_0x51eac8(0x19e)]['forEach'](_0x12b6a0=>{const _0x556e15=_0x51eac8;!donnees[_0x556e15(0x170)][_0x12b6a0[_0x556e15(0x179)]]&&(donnees[_0x556e15(0x170)][_0x12b6a0[_0x556e15(0x179)]]={'quantite':0x0,'valeur':0x0}),donnees[_0x556e15(0x170)][_0x12b6a0['produit']][_0x556e15(0x164)]+=_0x12b6a0[_0x556e15(0x164)],donnees[_0x556e15(0x170)][_0x12b6a0['produit']][_0x556e15(0x151)]+=_0x12b6a0[_0x556e15(0x1a2)]*_0x12b6a0[_0x556e15(0x164)];}),donnees[_0x51eac8(0x184)][_0x51eac8(0x199)](_0x2a7956=>{const _0x5bb3c8=_0x51eac8;donnees[_0x5bb3c8(0x170)][_0x2a7956['produit']]&&(donnees['inventaire'][_0x2a7956[_0x5bb3c8(0x179)]]['quantite']-=_0x2a7956['quantite'],donnees[_0x5bb3c8(0x170)][_0x2a7956['produit']][_0x5bb3c8(0x151)]-=_0x2a7956[_0x5bb3c8(0x1bd)]*_0x2a7956[_0x5bb3c8(0x164)]);});}function rafraichirTableaux(){rafraichirTableauApprovisionnements(),rafraichirTableauVentes(),rafraichirTableauInventaire(),mettreAJourSelectionProduits();}function rafraichirTableauApprovisionnements(){const _0x477729=_0x5e5669,_0x32e59d=document['querySelector'](_0x477729(0x1d3));_0x32e59d[_0x477729(0x1df)]='',donnees[_0x477729(0x19e)][_0x477729(0x199)]((_0x1e25d6,_0x1d4239)=>{const _0x45c84f=_0x477729,_0x2bbaa5=document[_0x45c84f(0x1d4)]('tr');_0x2bbaa5['innerHTML']=_0x45c84f(0x1dc)+_0x1e25d6[_0x45c84f(0x15a)]+_0x45c84f(0x1a5)+_0x1e25d6['produit']+_0x45c84f(0x1a5)+_0x1e25d6['quantite']+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x1e25d6[_0x45c84f(0x17a)]+_0x45c84f(0x1a5)+_0x1e25d6['transport']+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x1e25d6[_0x45c84f(0x1a2)]+_0x45c84f(0x1a5)+_0x1e25d6['prixVente']+_0x45c84f(0x1a5)+_0x1e25d6['benefice']+_0x45c84f(0x1d6)+_0x1d4239+_0x45c84f(0x165),_0x32e59d[_0x45c84f(0x16f)](_0x2bbaa5);});}function rafraichirTableauVentes(){const _0x1cc49d=_0x5e5669,_0x244551=document[_0x1cc49d(0x19d)](_0x1cc49d(0x1a9));_0x244551['innerHTML']='',donnees['ventes']['forEach']((_0x2ebd93,_0x3fd763)=>{const _0x528fca=_0x1cc49d,_0x419298=document[_0x528fca(0x1d4)]('tr');_0x419298[_0x528fca(0x1df)]=_0x528fca(0x1dc)+_0x2ebd93[_0x528fca(0x15a)]+_0x528fca(0x1a5)+_0x2ebd93[_0x528fca(0x179)]+_0x528fca(0x1a5)+_0x2ebd93['quantite']+_0x528fca(0x1a5)+_0x2ebd93[_0x528fca(0x1bd)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x2ebd93[_0x528fca(0x1dd)]+_0x528fca(0x195)+_0x3fd763+_0x528fca(0x165),_0x244551['appendChild'](_0x419298);});}function rafraichirTableauInventaire(){const _0x2338cb=_0x5e5669,_0x3c0e2e=document[_0x2338cb(0x19d)](_0x2338cb(0x17d));_0x3c0e2e[_0x2338cb(0x1df)]='';for(const [_0x227eb1,_0x4bc000]of Object[_0x2338cb(0x177)](donnees[_0x2338cb(0x170)])){const _0x2b9bc0=document[_0x2338cb(0x1d4)]('tr');_0x2b9bc0[_0x2338cb(0x1df)]=_0x2338cb(0x1dc)+_0x227eb1+_0x2338cb(0x1a5)+_0x4bc000['quantite']+_0x2338cb(0x1a5)+_0x4bc000[_0x2338cb(0x151)][_0x2338cb(0x19a)](0x2)+_0x2338cb(0x1c1),_0x3c0e2e[_0x2338cb(0x16f)](_0x2b9bc0);}}function mettreAJourSelectionProduits(){const _0x55a3dd=_0x5e5669,_0x1dfa42=document['getElementById'](_0x55a3dd(0x161)),_0x56f66a=document[_0x55a3dd(0x15d)]('venteProduit');_0x1dfa42['innerHTML']='',_0x56f66a[_0x55a3dd(0x1df)]='';for(const _0x5006e6 in donnees[_0x55a3dd(0x187)]){const _0x5c2484=document['createElement'](_0x55a3dd(0x1ae));_0x5c2484[_0x55a3dd(0x188)]=_0x5006e6,_0x5c2484[_0x55a3dd(0x1da)]=_0x5006e6,_0x1dfa42[_0x55a3dd(0x16f)](_0x5c2484);const _0x2fe391=document[_0x55a3dd(0x1d4)](_0x55a3dd(0x1ae));_0x2fe391[_0x55a3dd(0x188)]=_0x5006e6,_0x2fe391[_0x55a3dd(0x1da)]=_0x5006e6,_0x56f66a[_0x55a3dd(0x16f)](_0x2fe391);}}function remplirFormulaireApprovisionnement(_0x5289d9){const _0x20eaf6=_0x5e5669;donnees[_0x20eaf6(0x187)][_0x5289d9]?(document[_0x20eaf6(0x15d)](_0x20eaf6(0x198))[_0x20eaf6(0x188)]=donnees[_0x20eaf6(0x187)][_0x5289d9][_0x20eaf6(0x16a)]||'',document[_0x20eaf6(0x15d)](_0x20eaf6(0x196))[_0x20eaf6(0x188)]=donnees['produits'][_0x5289d9][_0x20eaf6(0x1a6)]||''):(document[_0x20eaf6(0x15d)](_0x20eaf6(0x198))[_0x20eaf6(0x188)]='',document['getElementById'](_0x20eaf6(0x196))[_0x20eaf6(0x188)]='');}function ouvrirModalProduit(){const _0x4f7a7a=_0x5e5669;document['getElementById']('produitModal')[_0x4f7a7a(0x189)][_0x4f7a7a(0x1b4)]=_0x4f7a7a(0x1c5);}function fermerModalProduit(){const _0x3847bf=_0x5e5669;document['getElementById'](_0x3847bf(0x178))['style'][_0x3847bf(0x1b4)]=_0x3847bf(0x1c7);}function ajouterProduit(_0x14ff6c){const _0xc809ab=_0x5e5669;_0x14ff6c['preventDefault']();const _0x2fbe6b=document['getElementById'](_0xc809ab(0x1ca))['value'],_0xcff3fa=parseFloat(document['getElementById'](_0xc809ab(0x16a))[_0xc809ab(0x188)])||null,_0x10b8bd=parseFloat(document[_0xc809ab(0x15d)](_0xc809ab(0x1a6))[_0xc809ab(0x188)])||null;donnees[_0xc809ab(0x187)][_0x2fbe6b]={'prixAchatDefaut':_0xcff3fa,'prixVenteDefaut':_0x10b8bd},sauvegarderDonnees(),mettreAJourSelectionProduits(),fermerModalProduit(),_0x14ff6c['target'][_0xc809ab(0x185)](),modeEnLigne&&database[_0xc809ab(0x1a8)](_0xc809ab(0x15b)+_0x2fbe6b)['set']({'prixAchatDefaut':_0xcff3fa,'prixVenteDefaut':_0x10b8bd});}function _0x4706(_0x48ec7a,_0x56af50){const _0x3245c5=_0x3245();return _0x4706=function(_0x4706f3,_0x5544d3){_0x4706f3=_0x4706f3-0x150;let _0x5ab4cb=_0x3245c5[_0x4706f3];return _0x5ab4cb;},_0x4706(_0x48ec7a,_0x56af50);}let editModal=document['getElementById'](_0x5e5669(0x171)),editForm=document[_0x5e5669(0x15d)]('editForm'),editIdInput=document[_0x5e5669(0x15d)](_0x5e5669(0x15c)),editDateInput=document['getElementById'](_0x5e5669(0x1b7)),editProduitSelect=document[_0x5e5669(0x15d)]('editProduit'),editQuantiteInput=document['getElementById'](_0x5e5669(0x1ab)),editPrixAchatInput=document[_0x5e5669(0x15d)](_0x5e5669(0x1bb)),editTransportInput=document['getElementById'](_0x5e5669(0x1a7)),editPrixVenteInput=document[_0x5e5669(0x15d)](_0x5e5669(0x1ce));function ouvrirModalEdit(_0x2a7925,_0x4b5ffa){const _0x556208=_0x5e5669;let _0x332f26=_0x2a7925===_0x556208(0x1a3)?donnees['approvisionnements'][_0x4b5ffa]:donnees[_0x556208(0x184)][_0x4b5ffa];editIdInput['value']=_0x4b5ffa,editIdInput[_0x556208(0x1b8)][_0x556208(0x1b6)]=_0x2a7925,editDateInput[_0x556208(0x188)]=_0x332f26[_0x556208(0x15a)],editProduitSelect['value']=_0x332f26[_0x556208(0x179)],editQuantiteInput['value']=_0x332f26[_0x556208(0x164)],editPrixAchatInput[_0x556208(0x188)]=_0x332f26['prixAchat'],editTransportInput[_0x556208(0x188)]=_0x332f26[_0x556208(0x167)],editPrixVenteInput['value']=_0x332f26['prixVente'],remplirSelectProduits(editProduitSelect),editModal['style']['display']=_0x556208(0x1c5);}function fermerModalEdit(){const _0x24f087=_0x5e5669;editModal[_0x24f087(0x189)][_0x24f087(0x1b4)]=_0x24f087(0x1c7),editForm[_0x24f087(0x185)]();}function modifierOperation(_0x57030e){const _0x270ab0=_0x5e5669;_0x57030e[_0x270ab0(0x168)]();const _0x546ce7=parseInt(editIdInput['value']),_0xfc44d6=editIdInput[_0x270ab0(0x1b8)][_0x270ab0(0x1b6)],_0x5e0505=editDateInput['value'],_0x233d6e=editProduitSelect[_0x270ab0(0x188)],_0x49f5fa=parseFloat(editQuantiteInput[_0x270ab0(0x188)]),_0x47b3d8=parseFloat(editPrixAchatInput['value']),_0x5dcef3=parseFloat(editTransportInput['value']),_0x130412=parseFloat(editPrixVenteInput['value']),_0x530174=_0x47b3d8+_0x5dcef3,_0x5cd8ac=(_0x130412-_0x530174)*_0x49f5fa,_0x55282a={'date':_0x5e0505,'produit':_0x233d6e,'quantite':_0x49f5fa,'prixAchat':_0x47b3d8,'transport':_0x5dcef3,'prixAchatTotal':_0x530174,'prixVente':_0x130412,'benefice':_0x5cd8ac};if(_0xfc44d6===_0x270ab0(0x1a3))donnees['approvisionnements'][_0x546ce7]=_0x55282a,modeEnLigne&&database[_0x270ab0(0x1a8)](_0x270ab0(0x163)+_0x546ce7)['set'](_0x55282a);else _0xfc44d6===_0x270ab0(0x174)&&(donnees[_0x270ab0(0x184)][_0x546ce7]=_0x55282a,modeEnLigne&&database[_0x270ab0(0x1a8)](_0x270ab0(0x197)+_0x546ce7)['set'](_0x55282a));mettreAJourInventaire(),rafraichirTableaux(),fermerModalEdit();}function supprimerOperation(_0x23254a,_0x3151e3){const _0x2be912=_0x5e5669;if(confirm(_0x2be912(0x183))){if(_0x23254a==='approvisionnement')donnees['approvisionnements'][_0x2be912(0x1d8)](_0x3151e3,0x1),modeEnLigne&&database[_0x2be912(0x1a8)](_0x2be912(0x163)+_0x3151e3)[_0x2be912(0x1d2)]();else _0x23254a===_0x2be912(0x174)&&(donnees['ventes'][_0x2be912(0x1d8)](_0x3151e3,0x1),modeEnLigne&&database[_0x2be912(0x1a8)](_0x2be912(0x197)+_0x3151e3)[_0x2be912(0x1d2)]());mettreAJourInventaire(),rafraichirTableaux();}}function filtrerDonnees(){const _0x6f7d18=_0x5e5669,_0x1a8a92=document[_0x6f7d18(0x15d)]('dateDebut')['value'],_0x2c1dae=document[_0x6f7d18(0x15d)]('dateFin')[_0x6f7d18(0x188)];if(!_0x1a8a92||!_0x2c1dae)return;const _0x358c8d=donnees[_0x6f7d18(0x19e)][_0x6f7d18(0x19f)](_0x396c01=>_0x396c01[_0x6f7d18(0x15a)]>=_0x1a8a92&&_0x396c01[_0x6f7d18(0x15a)]<=_0x2c1dae),_0x53dd6c=donnees[_0x6f7d18(0x184)][_0x6f7d18(0x19f)](_0x190e87=>_0x190e87[_0x6f7d18(0x15a)]>=_0x1a8a92&&_0x190e87[_0x6f7d18(0x15a)]<=_0x2c1dae),_0x580527={...donnees};donnees['approvisionnements']=_0x358c8d,donnees[_0x6f7d18(0x184)]=_0x53dd6c,mettreAJourInventaire(),rafraichirTableaux(),donnees=_0x580527;}function reinitialiserFiltres(){const _0x314772=_0x5e5669;document['getElementById'](_0x314772(0x1c0))[_0x314772(0x188)]='',document[_0x314772(0x15d)](_0x314772(0x1b9))[_0x314772(0x188)]='',rafraichirTableaux();}function exporterTableau(_0x59bcbb,_0x3e8f43){const _0x339d04=_0x5e5669,_0x100352=document[_0x339d04(0x15d)](_0x59bcbb);if(_0x3e8f43==='pdf'){let _0x2010df='Tableau';switch(_0x59bcbb){case _0x339d04(0x17b):_0x2010df=_0x339d04(0x1cd);break;case _0x339d04(0x1d9):_0x2010df=_0x339d04(0x182);break;case _0x339d04(0x1d7):_0x2010df=_0x339d04(0x1c3);break;}html2canvas(_0x100352)[_0x339d04(0x1a4)](_0x29a14d=>{const _0x16f4a7=_0x339d04,_0x83fd1c=_0x29a14d[_0x16f4a7(0x1c9)](_0x16f4a7(0x190),0x1),_0x10975c=new jspdf[(_0x16f4a7(0x17e))]('p','mm'),_0x21b036=0xa,_0x3dc214=_0x10975c['internal'][_0x16f4a7(0x180)]['getWidth']()-0x2*_0x21b036,_0x19d885=_0x29a14d[_0x16f4a7(0x176)]*_0x3dc214/_0x29a14d[_0x16f4a7(0x1e2)];_0x10975c[_0x16f4a7(0x18a)](0x10),_0x10975c[_0x16f4a7(0x1ad)](_0x2010df,_0x21b036,0xf),_0x10975c[_0x16f4a7(0x186)](_0x83fd1c,'JPEG',_0x21b036,0x14,_0x3dc214,_0x19d885),_0x10975c[_0x16f4a7(0x150)](_0x2010df+_0x16f4a7(0x1b1));});}else{if(_0x3e8f43===_0x339d04(0x1b2)){const _0x4a8611=XLSX[_0x339d04(0x1c6)]['table_to_book'](_0x100352);XLSX[_0x339d04(0x1b5)](_0x4a8611,_0x59bcbb+_0x339d04(0x16d));}}}function imprimerTableau(_0x371773){const _0x4a2226=_0x5e5669;let _0x3f9014='Tableau';switch(_0x371773){case'approvTable':_0x3f9014=_0x4a2226(0x1cd);break;case _0x4a2226(0x1d9):_0x3f9014=_0x4a2226(0x182);break;case _0x4a2226(0x1d7):_0x3f9014=_0x4a2226(0x1c3);break;}const _0x2afe0d=document[_0x4a2226(0x15d)](_0x371773)[_0x4a2226(0x16b)](!![]),_0x1578ae=_0x2afe0d['querySelectorAll'](_0x4a2226(0x1c8));_0x1578ae[_0x4a2226(0x199)](_0xe99d36=>_0xe99d36[_0x4a2226(0x1d2)]());const _0x59a64e=document[_0x4a2226(0x1d4)](_0x4a2226(0x153));_0x59a64e[_0x4a2226(0x189)][_0x4a2226(0x1b4)]=_0x4a2226(0x1c7),document['body'][_0x4a2226(0x16f)](_0x59a64e);const _0x4fbd0f=_0x59a64e[_0x4a2226(0x152)][_0x4a2226(0x1bc)];_0x4fbd0f['open'](),_0x4fbd0f[_0x4a2226(0x1c4)](_0x4a2226(0x1db)+_0x3f9014+_0x4a2226(0x1ba)+_0x3f9014+_0x4a2226(0x1e1)+_0x2afe0d[_0x4a2226(0x169)]+_0x4a2226(0x162)),_0x4fbd0f[_0x4a2226(0x155)](),_0x59a64e['onload']=function(){const _0xe77e89=_0x4a2226;_0x59a64e['contentWindow'][_0xe77e89(0x17c)](),_0x59a64e[_0xe77e89(0x152)][_0xe77e89(0x1be)]();},setTimeout(()=>{const _0x466719=_0x4a2226;document[_0x466719(0x17f)][_0x466719(0x1e4)](_0x59a64e);},0x0);}document['querySelectorAll'](_0x5e5669(0x192))[_0x5e5669(0x199)](_0x3fde09=>{const _0x236ab6=_0x5e5669;_0x3fde09[_0x236ab6(0x1b3)]('change',function(){const _0x29657d=_0x236ab6;modeEnLigne=this[_0x29657d(0x188)]==='online',localStorage['setItem'](_0x29657d(0x18b),modeEnLigne),modeEnLigne&&synchroniserDonneesAvecFirebase();});});function synchroniserDonneesAvecFirebase(){const _0x2976df=_0x5e5669;database[_0x2976df(0x1a8)](_0x2976df(0x19e))['on']('value',function(_0xa54659){const _0x457c86=_0x2976df;donnees[_0x457c86(0x19e)]=[],_0xa54659[_0x457c86(0x199)](_0x5d6140=>{const _0x1a2551=_0x457c86,_0x722896=_0x5d6140[_0x1a2551(0x1cf)]();donnees[_0x1a2551(0x19e)][_0x1a2551(0x1e5)](_0x722896);}),rafraichirTableauApprovisionnements(),mettreAJourInventaire();}),database[_0x2976df(0x1a8)]('ventes')['on'](_0x2976df(0x188),function(_0x2215d6){const _0x549431=_0x2976df;donnees[_0x549431(0x184)]=[],_0x2215d6[_0x549431(0x199)](_0x352959=>{const _0x1156eb=_0x549431,_0x1612d8=_0x352959[_0x1156eb(0x1cf)]();donnees['ventes'][_0x1156eb(0x1e5)](_0x1612d8);}),rafraichirTableauVentes(),mettreAJourInventaire();}),database[_0x2976df(0x1a8)](_0x2976df(0x187))['on']('value',function(_0x205eac){donnees['produits']={},_0x205eac['forEach'](_0x32d2d8=>{const _0x4354c2=_0x4706,_0x507fda=_0x32d2d8[_0x4354c2(0x19c)],_0x52808c=_0x32d2d8['val']();donnees['produits'][_0x507fda]=_0x52808c;}),mettreAJourSelectionProduits();});}function remplirSelectProduits(_0x29d6a0){const _0x1c94cf=_0x5e5669;_0x29d6a0['innerHTML']='';for(const _0x18a588 in donnees['produits']){const _0x2116ec=document[_0x1c94cf(0x1d4)](_0x1c94cf(0x1ae));_0x2116ec['value']=_0x18a588,_0x2116ec[_0x1c94cf(0x1da)]=_0x18a588,_0x29d6a0[_0x1c94cf(0x16f)](_0x2116ec);}}function activerBoutonsModifier(){const _0x3b4d6e=_0x5e5669,_0x5dda2c=document[_0x3b4d6e(0x193)](_0x3b4d6e(0x1af));_0x5dda2c[_0x3b4d6e(0x199)](_0x2b5312=>{const _0x589de7=_0x3b4d6e;_0x2b5312[_0x589de7(0x1b3)](_0x589de7(0x1c2),function(){const _0x144c5f=_0x589de7,_0x2847c2=parseInt(this[_0x144c5f(0x1b8)][_0x144c5f(0x18c)]),_0x1a8388=this[_0x144c5f(0x1b8)][_0x144c5f(0x1b6)];ouvrirModalEdit(_0x1a8388,_0x2847c2);});});}window[_0x5e5669(0x16e)]=function(){const _0x5271d9=_0x5e5669;chargerDonnees(),mettreAJourSelectionProduits(),document[_0x5271d9(0x15d)](_0x5271d9(0x1e3))[_0x5271d9(0x18f)]=new Date(),modeEnLigne=![],document[_0x5271d9(0x15d)](_0x5271d9(0x1d1))[_0x5271d9(0x18e)]=!![],activerBoutonsModifier();};
+// Configuration Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBuqC1mLmLgEUxYcXgkcr6o0p0qFAG3eRY",
+    authDomain: "marfouz-6b775.firebaseapp.com",
+    databaseURL: "https://marfouz-6b775-default-rtdb.firebaseio.com",
+    projectId: "marfouz-6b775",
+    storageBucket: "marfouz-6b775.firebasestorage.app",
+    messagingSenderId: "877095609290",
+    appId: "1:877095609290:web:2e6bc0456f1580e1942533",
+    measurementId: "G-JSLD71X9Z0"
+};
+
+// Initialisation Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+// Structure des données
+let donnees = {
+    approvisionnements: [],
+    ventes: [],
+    inventaire: {},
+    produits: {}
+};
+
+// Variables globales
+let synchronisationComplete = false;
+let produitEnEdition = null;
+let donneesOriginales = null;
+
+// Initialisation de l'application
+window.onload = async function() {
+    try {
+        await initialiserApplication();
+    } catch (error) {
+        console.error('Erreur lors de l\'initialisation:', error);
+        alert('Erreur lors du chargement de l\'application');
+    }
+};
+
+async function initialiserApplication() {
+    document.getElementById('operationDate').valueAsDate = new Date();
+    await synchroniserDonnees();
+    configurerEcouteursTempsReel();
+    document.getElementById('loading').style.display = 'none';
+    synchronisationComplete = true;
+}
+
+// Fonctions de synchronisation Firebase
+async function synchroniserDonnees() {
+    try {
+        const snapshot = await database.ref('donnees').once('value');
+        const data = snapshot.val();
+        if (data) {
+            donnees = {
+                approvisionnements: data.approvisionnements || [],
+                ventes: data.ventes || [],
+                inventaire: data.inventaire || {},
+                produits: data.produits || {}
+            };
+            donneesOriginales = {...donnees};
+        }
+        rafraichirTout();
+    } catch (error) {
+        console.error('Erreur de synchronisation:', error);
+        throw new Error('Erreur lors de la synchronisation des données');
+    }
+}
+
+function configurerEcouteursTempsReel() {
+    database.ref('donnees').on('value', (snapshot) => {
+        const data = snapshot.val();
+        if (!data) return;
+
+        donnees = {
+            approvisionnements: data.approvisionnements || [],
+            ventes: data.ventes || [],
+            inventaire: data.inventaire || {},
+            produits: data.produits || {}
+        };
+        donneesOriginales = {...donnees};
+
+        if (synchronisationComplete) {
+            rafraichirTout();
+        }
+    });
+}
+
+async function sauvegarderDonnees() {
+    try {
+        await database.ref('donnees').set(donnees);
+    } catch (error) {
+        console.error('Erreur de sauvegarde:', error);
+        throw new Error('Erreur lors de la sauvegarde des données');
+    }
+}
+
+// Gestion des approvisionnements
+async function enregistrerApprovisionnement(event) {
+    event.preventDefault();
+    if (!synchronisationComplete) {
+        alert('Synchronisation en cours, veuillez patienter...');
+        return;
+    }
+
+    try {
+        const formData = {
+            date: document.getElementById('operationDate').value,
+            produit: document.getElementById('approvProduit').value,
+            quantite: parseFloat(document.getElementById('approvQuantite').value),
+            prixAchat: parseFloat(document.getElementById('approvPrixAchat').value),
+            transport: parseFloat(document.getElementById('approvTransport').value),
+            prixVente: parseFloat(document.getElementById('approvPrixVente').value)
+        };
+
+        if (!formData.produit) {
+            alert('Veuillez sélectionner un produit');
+            return;
+        }
+
+        const approvisionnement = {
+            ...formData,
+            prixAchatTotal: formData.prixAchat + formData.transport,
+            benefice: (formData.prixVente - (formData.prixAchat + formData.transport)) * formData.quantite
+        };
+
+        donnees.approvisionnements.push(approvisionnement);
+        await mettreAJourInventaire();
+        await sauvegarderDonnees();
+        event.target.reset();
+        document.getElementById('operationDate').valueAsDate = new Date();
+        remplirFormulaireApprovisionnement(approvisionnement.produit);
+
+    } catch (error) {
+        console.error('Erreur d\'approvisionnement:', error);
+        alert('Erreur lors de l\'enregistrement de l\'approvisionnement');
+    }
+}
+
+// Gestion des ventes
+async function enregistrerVente(event) {
+    event.preventDefault();
+    if (!synchronisationComplete) {
+        alert('Synchronisation en cours, veuillez patienter...');
+        return;
+    }
+
+    try {
+        const formData = {
+            date: document.getElementById('operationDate').value,
+            produit: document.getElementById('venteProduit').value,
+            quantite: parseFloat(document.getElementById('venteQuantite').value),
+            prixVente: parseFloat(document.getElementById('ventePrix').value)
+        };
+
+        if (!formData.produit) {
+            alert('Veuillez sélectionner un produit');
+            return;
+        }
+
+        // Vérification du stock
+        const stockDisponible = donnees.inventaire[formData.produit]?.quantite || 0;
+        if (stockDisponible < formData.quantite) {
+            alert(`Stock insuffisant. Stock disponible: ${stockDisponible}`);
+            return;
+        }
+
+        const vente = {
+            ...formData,
+            total: formData.quantite * formData.prixVente
+        };
+
+        donnees.ventes.push(vente);
+        await mettreAJourInventaire();
+        await sauvegarderDonnees();
+        event.target.reset();
+        document.getElementById('operationDate').valueAsDate = new Date();
+
+    } catch (error) {
+        console.error('Erreur de vente:', error);
+        alert('Erreur lors de l\'enregistrement de la vente');
+    }
+}
+
+// Gestion de l'inventaire
+async function mettreAJourInventaire() {
+    donnees.inventaire = {};
+
+    // Calcul des entrées (approvisionnements)
+    donnees.approvisionnements.forEach(approv => {
+        if (!donnees.inventaire[approv.produit]) {
+            donnees.inventaire[approv.produit] = { quantite: 0, valeur: 0 };
+        }
+        donnees.inventaire[approv.produit].quantite += approv.quantite;
+        donnees.inventaire[approv.produit].valeur += approv.prixAchatTotal * approv.quantite;
+    });
+
+    // Calcul des sorties (ventes)
+    donnees.ventes.forEach(vente => {
+        if (donnees.inventaire[vente.produit]) {
+            donnees.inventaire[vente.produit].quantite -= vente.quantite;
+            if (donnees.inventaire[vente.produit].quantite > 0) {
+                // Ajustement proportionnel de la valeur
+                donnees.inventaire[vente.produit].valeur = 
+                    (donnees.inventaire[vente.produit].valeur * 
+                    donnees.inventaire[vente.produit].quantite) / 
+                    (donnees.inventaire[vente.produit].quantite + vente.quantite);
+            } else {
+                donnees.inventaire[vente.produit].valeur = 0;
+            }
+        }
+    });
+}
+
+// Gestion des produits
+function remplirFormulaireApprovisionnement(produit) {
+    if (donnees.produits[produit]) {
+        const produitInfo = donnees.produits[produit];
+        document.getElementById('approvPrixAchat').value = produitInfo.prixAchatDefaut || '';
+        document.getElementById('approvPrixVente').value = produitInfo.prixVenteDefaut || '';
+        document.getElementById('approvTransport').value = '';
+        document.getElementById('approvQuantite').value = '';
+    }
+}
+
+async function ajouterProduit(event) {
+    event.preventDefault();
+    if (!synchronisationComplete) {
+        alert('Synchronisation en cours, veuillez patienter...');
+        return;
+    }
+
+    try {
+        const nomProduit = document.getElementById('nouveauProduit').value.trim();
+        if (!nomProduit) {
+            alert('Le nom du produit est requis');
+            return;
+        }
+
+        if (donnees.produits[nomProduit]) {
+            alert('Ce produit existe déjà');
+            return;
+        }
+
+        donnees.produits[nomProduit] = {
+            prixAchatDefaut: parseFloat(document.getElementById('prixAchatDefaut').value) || null,
+            prixVenteDefaut: parseFloat(document.getElementById('prixVenteDefaut').value) || null
+        };
+
+        await sauvegarderDonnees();
+        event.target.reset();
+        rafraichirTableauProduits();
+        mettreAJourSelectionProduits();
+
+    } catch (error) {
+        console.error('Erreur d\'ajout de produit:', error);
+        alert('Erreur lors de l\'ajout du produit');
+    }
+}
+
+async function modifierProduit(nomProduit) {
+    try {
+        const nouveauNom = document.getElementById(`edit-nom-${nomProduit}`).value.trim();
+        const prixAchat = parseFloat(document.getElementById(`edit-achat-${nomProduit}`).value) || null;
+        const prixVente = parseFloat(document.getElementById(`edit-vente-${nomProduit}`).value) || null;
+
+        if (!nouveauNom) {
+            alert('Le nom du produit est requis');
+            return;
+        }
+
+        if (nouveauNom !== nomProduit && donnees.produits[nouveauNom]) {
+            alert('Ce nom de produit existe déjà');
+            return;
+        }
+
+        // Mise à jour des références si le nom change
+        if (nouveauNom !== nomProduit) {
+            // Mise à jour des approvisionnements
+            donnees.approvisionnements = donnees.approvisionnements.map(a => ({
+                ...a,
+                produit: a.produit === nomProduit ? nouveauNom : a.produit
+            }));
+
+            // Mise à jour des ventes
+            donnees.ventes = donnees.ventes.map(v => ({
+                ...v,
+                produit: v.produit === nomProduit ? nouveauNom : v.produit
+            }));
+
+            // Mise à jour de l'inventaire
+            if (donnees.inventaire[nomProduit]) {
+                donnees.inventaire[nouveauNom] = donnees.inventaire[nomProduit];
+                delete donnees.inventaire[nomProduit];
+            }
+
+            // Suppression de l'ancien produit
+            delete donnees.produits[nomProduit];
+        }
+
+        // Mise à jour ou création du produit
+        donnees.produits[nouveauNom] = {
+            prixAchatDefaut: prixAchat,
+            prixVenteDefaut: prixVente
+        };
+
+        await sauvegarderDonnees();
+        produitEnEdition = null;
+        rafraichirTout();
+
+    } catch (error) {
+        console.error('Erreur de modification:', error);
+        alert('Erreur lors de la modification du produit');
+    }
+}
+
+async function supprimerProduit(nomProduit) {
+    if (!confirm(`Êtes-vous sûr de vouloir supprimer le produit "${nomProduit}" ?`)) {
+        return;
+    }
+
+    try {
+        const aDesMovements = 
+            donnees.approvisionnements.some(a => a.produit === nomProduit) ||
+            donnees.ventes.some(v => v.produit === nomProduit);
+
+        if (aDesMovements) {
+            alert('Impossible de supprimer ce produit car il a des mouvements associés');
+            return;
+        }
+
+        delete donnees.produits[nomProduit];
+        delete donnees.inventaire[nomProduit];
+        
+        await sauvegarderDonnees();
+        rafraichirTout();
+
+    } catch (error) {
+        console.error('Erreur de suppression:', error);
+        alert('Erreur lors de la suppression du produit');
+    }
+}
+
+// Fonctions de rafraîchissement
+function rafraichirTout() {
+    rafraichirTableauApprovisionnements();
+    rafraichirTableauVentes();
+    rafraichirTableauInventaire();
+    rafraichirTableauProduits();
+    mettreAJourSelectionProduits();
+}
+
+function rafraichirTableauApprovisionnements() {
+    const tbody = document.querySelector('#approvTable tbody');
+    tbody.innerHTML = '';
+    
+    let totaux = {
+        quantite: 0,
+        prixAchat: 0,
+        transport: 0,
+        prixAchatTotal: 0,
+        prixVente: 0,
+        benefice: 0
+    };
+
+    donnees.approvisionnements.forEach(approv => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${formatDate(approv.date)}</td>
+            <td>${approv.produit}</td>
+            <td class="text-right">${formatNumber(approv.quantite)}</td>
+            <td class="text-right">${formatCurrency(approv.prixAchat)}</td>
+            <td class="text-right">${formatCurrency(approv.transport)}</td>
+            <td class="text-right">${formatCurrency(approv.prixAchatTotal)}</td>
+            <td class="text-right">${formatCurrency(approv.prixVente)}</td>
+            <td class="text-right">${formatCurrency(approv.benefice)}</td>
+        `;
+        tbody.appendChild(tr);
+
+        totaux.quantite += approv.quantite;
+        totaux.prixAchat += approv.prixAchat * approv.quantite;
+        totaux.transport += approv.transport * approv.quantite;
+        totaux.prixAchatTotal += approv.prixAchatTotal * approv.quantite;
+        totaux.prixVente += approv.prixVente * approv.quantite;
+        totaux.benefice += approv.benefice;
+    });
+
+// Mise à jour des totaux
+document.getElementById('totalApprovQuantite').textContent = formatNumber(totaux.quantite);
+document.getElementById('totalApprovPrixAchat').textContent = formatCurrency(totaux.prixAchat);
+document.getElementById('totalApprovTransport').textContent = formatCurrency(totaux.transport);
+document.getElementById('totalApprovPrixAchatTotal').textContent = formatCurrency(totaux.prixAchatTotal);
+document.getElementById('totalApprovPrixVente').textContent = formatCurrency(totaux.prixVente);
+document.getElementById('totalApprovBenefice').textContent = formatCurrency(totaux.benefice);
+}
+
+function rafraichirTableauVentes() {
+const tbody = document.querySelector('#venteTable tbody');
+tbody.innerHTML = '';
+
+let totaux = {
+    quantite: 0,
+    prixVente: 0,
+    total: 0
+};
+
+donnees.ventes.forEach(vente => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${formatDate(vente.date)}</td>
+        <td>${vente.produit}</td>
+        <td class="text-right">${formatNumber(vente.quantite)}</td>
+        <td class="text-right">${formatCurrency(vente.prixVente)}</td>
+        <td class="text-right">${formatCurrency(vente.total)}</td>
+    `;
+    tbody.appendChild(tr);
+
+    totaux.quantite += vente.quantite;
+    totaux.prixVente += vente.prixVente;
+    totaux.total += vente.total;
+});
+
+const moyennePrixVente = donnees.ventes.length ? totaux.prixVente / donnees.ventes.length : 0;
+
+document.getElementById('totalVenteQuantite').textContent = formatNumber(totaux.quantite);
+document.getElementById('moyenneVentePrix').textContent = formatCurrency(moyennePrixVente);
+document.getElementById('totalVenteTotal').textContent = formatCurrency(totaux.total);
+}
+
+function rafraichirTableauInventaire() {
+const tbody = document.querySelector('#inventaireTable tbody');
+tbody.innerHTML = '';
+
+let totaux = {
+    stock: 0,
+    valeur: 0
+};
+
+Object.entries(donnees.inventaire)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .forEach(([produit, info]) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${produit}</td>
+            <td class="text-right">${formatNumber(info.quantite)}</td>
+            <td class="text-right">${formatCurrency(info.valeur)}</td>
+        `;
+        tbody.appendChild(tr);
+
+        totaux.stock += info.quantite;
+        totaux.valeur += info.valeur;
+    });
+
+document.getElementById('totalInventaireStock').textContent = formatNumber(totaux.stock);
+document.getElementById('totalInventaireValeur').textContent = formatCurrency(totaux.valeur);
+}
+
+function rafraichirTableauProduits() {
+const tbody = document.querySelector('#produitsTable tbody');
+tbody.innerHTML = '';
+
+Object.entries(donnees.produits)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .forEach(([nomProduit, produit]) => {
+        const stockInfo = donnees.inventaire[nomProduit] || { quantite: 0, valeur: 0 };
+        const tr = document.createElement('tr');
+        
+        if (produitEnEdition === nomProduit) {
+            tr.innerHTML = `
+                <td><input type="text" id="edit-nom-${nomProduit}" value="${nomProduit}" class="form-control" /></td>
+                <td><input type="number" id="edit-achat-${nomProduit}" value="${produit.prixAchatDefaut || ''}" step="0.01" min="0" class="form-control" /></td>
+                <td><input type="number" id="edit-vente-${nomProduit}" value="${produit.prixVenteDefaut || ''}" step="0.01" min="0" class="form-control" /></td>
+                <td class="text-right">${formatNumber(stockInfo.quantite)}</td>
+                <td class="text-right">${formatCurrency(stockInfo.valeur)}</td>
+                <td class="product-actions">
+                    <button onclick="modifierProduit('${nomProduit}')" class="btn-info">Sauvegarder</button>
+                    <button onclick="annulerEdition()" class="btn-warning">Annuler</button>
+                </td>
+            `;
+        } else {
+            tr.innerHTML = `
+                <td>${nomProduit}</td>
+                <td class="text-right">${produit.prixAchatDefaut ? formatCurrency(produit.prixAchatDefaut) : '-'}</td>
+                <td class="text-right">${produit.prixVenteDefaut ? formatCurrency(produit.prixVenteDefaut) : '-'}</td>
+                <td class="text-right">${formatNumber(stockInfo.quantite)}</td>
+                <td class="text-right">${formatCurrency(stockInfo.valeur)}</td>
+                <td class="product-actions">
+                    <button onclick="editerProduit('${nomProduit}')" class="btn-warning">Éditer</button>
+                    <button onclick="supprimerProduit('${nomProduit}')" class="btn-danger">Supprimer</button>
+                </td>
+            `;
+        }
+        tbody.appendChild(tr);
+    });
+}
+
+function mettreAJourSelectionProduits() {
+const selecteurs = ['approvProduit', 'venteProduit'];
+
+selecteurs.forEach(id => {
+    const select = document.getElementById(id);
+    const valeurActuelle = select.value;
+    select.innerHTML = '';
+    
+    // Option par défaut
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = '-- Sélectionner un produit --';
+    select.appendChild(defaultOption);
+    
+    // Ajout des produits triés
+    Object.keys(donnees.produits)
+        .sort()
+        .forEach(produit => {
+            const option = document.createElement('option');
+            option.value = produit;
+            option.textContent = produit;
+            select.appendChild(option);
+        });
+    
+    // Restaurer la valeur précédente si elle existe toujours
+    if (valeurActuelle && donnees.produits[valeurActuelle]) {
+        select.value = valeurActuelle;
+    }
+});
+}
+
+// Fonctions de filtrage
+function filtrerDonnees() {
+const dateDebut = document.getElementById('dateDebut').value;
+const dateFin = document.getElementById('dateFin').value;
+
+if (!dateDebut || !dateFin) {
+    alert('Veuillez sélectionner une période de filtrage');
+    return;
+}
+
+const donneesFiltrees = {
+    ...donnees,
+    approvisionnements: donnees.approvisionnements.filter(a => 
+        a.date >= dateDebut && a.date <= dateFin
+    ),
+    ventes: donnees.ventes.filter(v => 
+        v.date >= dateDebut && v.date <= dateFin
+    )
+};
+
+donnees = donneesFiltrees;
+rafraichirTableauApprovisionnements();
+rafraichirTableauVentes();
+donnees = donneesOriginales;
+}
+
+function reinitialiserFiltres() {
+document.getElementById('dateDebut').value = '';
+document.getElementById('dateFin').value = '';
+rafraichirTout();
+}
+
+// Fonctions d'export et d'impression
+function exporterTableau(tableId, format) {
+const table = document.getElementById(tableId);
+const titre = table.closest('section').querySelector('h2 span').textContent;
+const date = new Date().toLocaleDateString();
+const periode = getPeriodeFilter();
+
+if (format === 'pdf') {
+    exporterPDF(table, titre, date, periode);
+} else if (format === 'excel') {
+    exporterExcel(table, titre, date, periode);
+}
+}
+
+function exporterPDF(table, titre, date, periode) {
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+
+// En-tête
+doc.setFontSize(16);
+doc.text(titre, 14, 15);
+doc.setFontSize(10);
+doc.text(`Date d'export: ${date}`, 14, 25);
+if (periode) {
+    doc.text(`Période: ${periode}`, 14, 30);
+}
+
+// Configuration du tableau
+doc.autoTable({
+    html: table,
+    startY: periode ? 35 : 30,
+    styles: { 
+        fontSize: 8,
+        cellPadding: 2
+    },
+    headStyles: { 
+        fillColor: [73, 175, 80],
+        textColor: [255, 255, 255]
+    },
+    footStyles: { 
+        fillColor: [240, 240, 240],
+        textColor: [0, 0, 0],
+        fontStyle: 'bold'
+    },
+    margin: { top: 30 },
+    didParseCell: function(data) {
+        // Alignement des nombres à droite
+        if (typeof data.cell.raw === 'number' || 
+            (typeof data.cell.raw === 'string' && !isNaN(data.cell.raw))) {
+            data.cell.styles.halign = 'right';
+        }
+    }
+});
+
+doc.save(`${titre}_${date.replace(/\//g, '-')}.pdf`);
+}
+
+function exporterExcel(table, titre, date, periode) {
+const wb = XLSX.utils.book_new();
+const ws = XLSX.utils.table_to_sheet(table);
+
+// Ajout des métadonnées
+XLSX.utils.sheet_add_aoa(ws, [
+    [`${titre}`],
+    [`Export du ${date}`],
+    periode ? [`Période: ${periode}`] : [],
+    [''] // Ligne vide avant le tableau
+], { origin: 'A1' });
+
+// Formatage des cellules
+const range = XLSX.utils.decode_range(ws['!ref']);
+for (let R = range.s.r; R <= range.e.r; ++R) {
+    for (let C = range.s.c; C <= range.e.c; ++C) {
+        const cell_address = {c: C, r: R};
+        const cell_ref = XLSX.utils.encode_cell(cell_address);
+        const cell = ws[cell_ref];
+
+        if (!cell) continue;
+
+        // Formatage des nombres
+        if (typeof cell.v === 'number') {
+            if (cell.v % 1 === 0) {
+                // Nombre entier
+                cell.z = '#,##0';
+            } else {
+                // Nombre décimal
+                cell.z = '#,##0.00';
+            }
+        }
+    }
+}
+
+XLSX.utils.book_append_sheet(wb, ws, titre);
+XLSX.writeFile(wb, `${titre}_${date.replace(/\//g, '-')}.xlsx`);
+}
+
+function imprimerTableau(tableId) {
+const printWindow = window.open('', '', 'width=1000,height=700');
+const table = document.getElementById(tableId);
+const titre = table.closest('section').querySelector('h2 span').textContent;
+const date = new Date().toLocaleDateString();
+const periode = getPeriodeFilter();
+
+printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>${titre}</title>
+        <meta charset="UTF-8">
+        <style>
+            body { 
+                font-family: Arial, sans-serif; 
+                padding: 20px; 
+            }
+            .print-header { 
+                text-align: center; 
+                margin-bottom: 20px; 
+            }
+            .print-header h1 { 
+                font-size: 24px; 
+                margin-bottom: 10px; 
+            }
+            .print-header p { 
+                font-size: 14px; 
+                color: #666; 
+            }
+            table { 
+                width: 100%; 
+                border-collapse: collapse; 
+                margin-top: 20px; 
+            }
+            th, td { 
+                border: 1px solid #ddd; 
+                padding: 8px; 
+                text-align: left; 
+            }
+            th { 
+                background-color: #f5f5f5; 
+            }
+            .total-row { 
+                background-color: #f0f0f0; 
+                font-weight: bold; 
+            }
+            .text-right { 
+                text-align: right; 
+            }
+            @media print {
+                .no-print { 
+                    display: none; 
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="print-header">
+            <h1>${titre}</h1>
+            <p>Date d'impression: ${date}</p>
+            ${periode ? `<p>Période: ${periode}</p>` : ''}
+        </div>
+        ${table.outerHTML}
+    </body>
+    </html>
+`);
+
+printWindow.document.close();
+printWindow.focus();
+
+// Attendre le chargement complet avant d'imprimer
+printWindow.onload = function() {
+    printWindow.print();
+    setTimeout(() => printWindow.close(), 250);
+};
+}
+
+// Fonctions utilitaires
+function formatDate(dateStr) {
+const date = new Date(dateStr);
+return date.toLocaleDateString('fr-FR');
+}
+
+function formatNumber(number) {
+return new Intl.NumberFormat('fr-FR').format(number);
+}
+
+function formatCurrency(number) {
+    return new Intl.NumberFormat('fr-FR', { 
+        style: 'currency', 
+        currency: 'XAF',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(number);
+}
+
+function getPeriodeFilter() {
+const dateDebut = document.getElementById('dateDebut').value;
+const dateFin = document.getElementById('dateFin').value;
+if (dateDebut && dateFin) {
+    return `Du ${formatDate(dateDebut)} au ${formatDate(dateFin)}`;
+}
+return '';
+}
+
+// Fonctions Modal
+function editerProduit(nomProduit) {
+produitEnEdition = nomProduit;
+rafraichirTableauProduits();
+}
+
+function annulerEdition() {
+produitEnEdition = null;
+rafraichirTableauProduits();
+}
+
+function ouvrirModalProduit() {
+    document.getElementById('produitModal').style.display = 'block';
+    rafraichirTableauProduits();
+}
+
+function fermerModalProduit() {
+    document.getElementById('produitModal').style.display = 'none';
+    produitEnEdition = null;
+}
+
+
+
+// Gestionnaire d'erreurs global
+window.onerror = function(message, source, lineno, colno, error) {
+    console.error('Erreur globale:', {
+        message,
+        source,
+        lineno,
+        colno,
+        error
+    });
+    
+    let errorMessage = 'Une erreur est survenue.';
+    if (error && error.message) {
+        errorMessage += '\nDétail : ' + error.message;
+    }
+    
+    alert(errorMessage + '\nVeuillez rafraîchir la page si le problème persiste.');
+    return false;
+};
+
+// Gestionnaire d'événements pour fermer le modal quand on clique en dehors
+window.onclick = function(event) {
+    const modal = document.getElementById('produitModal');
+    if (event.target === modal) {
+        fermerModalProduit();
+    }
+};
+
+// Gestionnaire d'événements pour les raccourcis clavier
+document.addEventListener('keydown', function(event) {
+    // Échap pour fermer le modal
+    if (event.key === 'Escape') {
+        const modal = document.getElementById('produitModal');
+        if (modal.style.display === 'block') {
+            fermerModalProduit();
+        }
+    }
+});
+
+// Protection contre la perte de données
+window.addEventListener('beforeunload', function(event) {
+    if (document.querySelector('form:invalid') || produitEnEdition) {
+        event.preventDefault();
+        event.returnValue = '';
+    }
+});
+
+// Initialisation des event listeners pour le formatage automatique des nombres
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener('blur', function() {
+        if (this.value) {
+            this.value = parseFloat(this.value).toFixed(2);
+        }
+    });
+});
